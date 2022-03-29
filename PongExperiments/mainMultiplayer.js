@@ -39,7 +39,7 @@ var lrScore = 0;
 //y axis paddle offset
 var upPaddleYOffset = 0;
 var downPaddleYOffset = 0;
-var maxYOffset = 70;
+var maxYOffset = 256;
 //YOff
 
 
@@ -153,14 +153,14 @@ function drawBall() {
 }
 function drawPaddleDown() {
     ctx.beginPath();
-    ctx.rect(downPaddleX, canvas.height-downPaddleHeight - 1 /*- downPaddleYOffset*/, downPaddleWidth, downPaddleHeight);
+    ctx.rect(downPaddleX, canvas.height-downPaddleHeight - 1 - downPaddleYOffset, downPaddleWidth, downPaddleHeight);
     ctx.fillStyle = paddleColor;
     ctx.fill();
     ctx.closePath();
 }
 function drawPaddleUp() {
     ctx.beginPath();
-    ctx.rect(upPaddleX, 1/*+ upPaddleYOffset*/, upPaddleWidth, upPaddleHeight);
+    ctx.rect(upPaddleX, 1 + upPaddleYOffset, upPaddleWidth, upPaddleHeight);
     ctx.fillStyle = paddleColor;
     ctx.fill();
     ctx.closePath();
@@ -183,6 +183,20 @@ function drawMultiplayer() {
     drawPaddleUp();
     drawScore();
 
+    //killines
+    if(y + dy > canvas.height-ballRadius/2) {
+        adScore++;
+        x = canvas.width/2
+        y = canvas.height/2;
+        paused = true;
+    }
+    else if(y + dy < 0+ballRadius/2) {
+        lrScore++;
+        x = canvas.width/2
+        y = canvas.height/2;
+        paused = true;
+    }
+
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
@@ -196,6 +210,7 @@ function drawMultiplayer() {
             lrScore++;
             x = canvas.width/2
             y = canvas.height/2;
+            paused = true;
         }
     }
     if(y + dy > canvas.height-ballRadius-downPaddleHeight) {
@@ -206,6 +221,7 @@ function drawMultiplayer() {
             adScore++;
             x = canvas.width/2
             y = canvas.height/2;
+            paused = true;
         }
     }
     
@@ -224,6 +240,17 @@ function drawMultiplayer() {
     }
 
     //yOffset
+    if(y + dy < upPaddleYOffset + ballRadius && y + dy > upPaddleYOffset - ballRadius && x + dx > upPaddleX && x + dx < upPaddleX + upPaddleWidth) {
+        dy = -dy;
+    }
+    if(y + dy < canvas.height - downPaddleYOffset + ballRadius && y + dy > canvas.height - downPaddleYOffset - ballRadius && x + dx > downPaddleX && x + dx < downPaddleX + downPaddleWidth) {
+        dy = -dy;
+    }
+
+
+
+
+
     if(upDownPressed && upPaddleYOffset < maxYOffset + 7){
         upPaddleYOffset += 7;
     }
