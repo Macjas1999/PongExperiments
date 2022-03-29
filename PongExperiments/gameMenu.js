@@ -4,14 +4,14 @@ var paused = false;
 
 
 function startSingle(){
-    if(running){return;}
+    if(runningSingle){return;}
     runningSingle = true;
     draw();
 }
 
 
 function startMulti(){
-    if(running){return;}
+    if(runningMulti){return;}
     runningMulti = true;
     drawMultiplayer();
 }

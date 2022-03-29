@@ -40,6 +40,9 @@ var lrScore = 0;
 var upPaddleYOffset = 0;
 var downPaddleYOffset = 0;
 var maxYOffset = 256;
+
+var lastUp = false;
+var lastDown = false;
 //YOff
 
 
@@ -240,11 +243,19 @@ function drawMultiplayer() {
     }
 
     //yOffset
-    if(y + dy < upPaddleYOffset + ballRadius && y + dy > upPaddleYOffset - ballRadius && x + dx > upPaddleX && x + dx < upPaddleX + upPaddleWidth) {
-        dy = -dy;
+    if(y + dy < upPaddleYOffset + ballRadius*2 && y + dy > upPaddleYOffset - ballRadius*2 && x + dx > upPaddleX && x + dx < upPaddleX + upPaddleWidth) {
+        if(!lastUp){
+            dy = -dy;
+            lastUp = true;
+            lastDown = false;
+        }
     }
-    if(y + dy < canvas.height - downPaddleYOffset + ballRadius && y + dy > canvas.height - downPaddleYOffset - ballRadius && x + dx > downPaddleX && x + dx < downPaddleX + downPaddleWidth) {
-        dy = -dy;
+    if(y + dy < canvas.height - downPaddleYOffset + ballRadius*2 && y + dy > canvas.height - downPaddleYOffset - ballRadius*2 && x + dx > downPaddleX && x + dx < downPaddleX + downPaddleWidth) {
+        if(!lastDown){
+            dy = -dy;
+            lastDown = true;
+            lastUp = false;
+        }
     }
 
 
@@ -252,18 +263,18 @@ function drawMultiplayer() {
 
 
     if(upDownPressed && upPaddleYOffset < maxYOffset + 7){
-        upPaddleYOffset += 7;
+        upPaddleYOffset += 5;
     }
     else if(upUpPressed && upPaddleYOffset > 7){
-        upPaddleYOffset -= 7;
+        upPaddleYOffset -= 5;
     }
 
 
     if(downDownPressed && downPaddleYOffset > 7){
-        downPaddleYOffset -= 7;
+        downPaddleYOffset -= 5;
     }
     else if(downUpPressed && downPaddleYOffset < maxYOffset + 7){
-        downPaddleYOffset += 7;
+        downPaddleYOffset += 5;
     }
     
     x += dx;
