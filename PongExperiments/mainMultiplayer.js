@@ -5,26 +5,44 @@ var ballRadius = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
 var dx = 2;
-var dy = -2;
+var dy = -4;
 //PaddleDown##################
 var downPaddleHeight = 10;
 var downPaddleWidth = 100;
 var downPaddleX = (canvas.width-downPaddleWidth)/2;
 var downRightPressed = false;
 var downLeftPressed = false;
+////YOff
+// var downUpPressed = false;
+// var downDownPressed = false;
+////YOff
+
 //PaddleUP##############
 var upPaddleHeight = 10;
 var upPaddleWidth = 100;
 var upPaddleX = (canvas.width-upPaddleWidth)/2;
 var upRightPressed = false;
 var upLeftPressed = false;
+////YOff
+// var upUpPressed = false;
+// var upDownPressed = false;
+////YOff
 
 var paddleColor = "#4b7502";
 var ballColor = "#13084a";
+var scoreAndHalfColor = "#614355";
 
 //score
 var adScore = 0;
 var lrScore = 0;
+/*
+//YOff
+//y axis paddle offset
+var upPaddleYOffset = 0;
+var downPaddleYOffset = 0;
+var maxYOffset = 70;
+//YOff
+*/
 
 
 //Event
@@ -51,6 +69,28 @@ function keyDownHandler(e) {
         case "a":
             upLeftPressed = true;
             break;
+        //YOff
+        /*
+        case "Up":
+            downUpPressed = true;
+            break;
+        case "Down":
+            downDownPressed = true;
+            break;
+        case "ArrowUp":
+            downUpPressed = true;
+            break;
+        case "ArrowDown":
+            downDownPressed = true;
+            break;
+        case "w":
+            upUpPressed = true;
+            break;
+        case "s":
+            upDownPressed = true;
+            break;
+        */
+        //YOff
         default:
             break;
     }
@@ -76,10 +116,40 @@ function keyUpHandler(e) {
         case "a":
             upLeftPressed = false;
             break;
+            //YOff
+        /* 
+        case "Up":
+            downUpPressed = false;
+            break;
+        case "Down":
+            downDownPressed = false;
+            break;
+        case "ArrowUp":
+            downUpPressed = false;
+            break;
+        case "ArrowDown":
+            downDownPressed = false;
+            break;
+        case "w":
+            upUpPressed = false;
+            break;
+        case "s":
+            upDownPressed = false;
+            break;
+        
+        */
+        //YOff
         default:
             break;
     }
     
+}
+function drawHalf(){
+    ctx.beginPath();
+    ctx.rect(0, canvas.height/2-2, canvas.width, 4);
+    ctx.fillStyle = scoreAndHalfColor;
+    ctx.fill();
+    ctx.closePath();
 }
 function drawBall() {
     ctx.beginPath();
@@ -90,22 +160,22 @@ function drawBall() {
 }
 function drawPaddleDown() {
     ctx.beginPath();
-    ctx.rect(downPaddleX, canvas.height-downPaddleHeight - 1, downPaddleWidth, downPaddleHeight);
+    ctx.rect(downPaddleX, canvas.height-downPaddleHeight - 1 /*- downPaddleYOffset*/, downPaddleWidth, downPaddleHeight);
     ctx.fillStyle = paddleColor;
     ctx.fill();
     ctx.closePath();
 }
 function drawPaddleUp() {
     ctx.beginPath();
-    ctx.rect(upPaddleX, 1, upPaddleWidth, upPaddleHeight);
+    ctx.rect(upPaddleX, 1/*+ upPaddleYOffset*/, upPaddleWidth, upPaddleHeight);
     ctx.fillStyle = paddleColor;
     ctx.fill();
     ctx.closePath();
 }
 
 function drawScore(){
-    ctx.font = "32px Arial";
-    ctx.fillStle = "#0095DD";
+    ctx.font = "32px Courier New";
+    ctx.fillStle = scoreAndHalfColor;
     ctx.fillText(adScore, canvas.width/2, canvas.height/4);
     ctx.fillText(lrScore, canvas.width/2, canvas.height - canvas.height/4)
 }
@@ -114,6 +184,7 @@ function drawScore(){
 function drawMultiplayer() {
     if(paused){return;}
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawHalf();
     drawBall();
     drawPaddleDown();
     drawPaddleUp();
@@ -158,6 +229,23 @@ function drawMultiplayer() {
     else if(downLeftPressed && downPaddleX > 0) {
         downPaddleX -= 7;
     }
+
+    /*
+    if(upDownPressed && upPaddleYOffset < maxYOffset + 7){
+        upPaddleYOffset += 7;
+    }
+    else if(upUpPressed && upPaddleYOffset > 7){
+        upPaddleYOffset -= 7;
+    }
+
+
+    if(downDownPressed && downPaddleYOffset > 7){
+        downPaddleYOffset -= 7;
+    }
+    else if(downUpPressed && downPaddleYOffset < maxYOffset + 7){
+        downPaddleYOffset += 7;
+    }
+    */
     
     x += dx;
     y += dy;

@@ -101,7 +101,7 @@ function collisionDetection() {
 
 //DrawF
 function drawScore(){
-    ctx.font = "16px Arial";
+    ctx.font = "16px Courier New";
     ctx.fillStle = "#0095DD";
     ctx.fillText("Score: "+score, 8, 20);
 }
