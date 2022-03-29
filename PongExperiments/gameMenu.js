@@ -1,17 +1,18 @@
-var running = false;
+var runningMulti = false;
+var runningSingle = false;
 var paused = false;
 
 
 function startSingle(){
     if(running){return;}
-    running = true;
+    runningSingle = true;
     draw();
 }
 
 
 function startMulti(){
     if(running){return;}
-    running = true;
+    runningMulti = true;
     drawMultiplayer();
 }
 
@@ -23,6 +24,11 @@ function pause(){
     else if(paused){
         paused = false;
         document.getElementById("menubar3").innerHTML = "PAUSE";
-        requestAnimationFrame(draw);
-    }   
+        if(runningMulti){
+            requestAnimationFrame(drawMultiplayer);
+        }
+        else if(runningSingle){
+            requestAnimationFrame(draw);
+        }
+    }
 }
