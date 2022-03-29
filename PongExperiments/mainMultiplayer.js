@@ -12,10 +12,10 @@ var downPaddleWidth = 100;
 var downPaddleX = (canvas.width-downPaddleWidth)/2;
 var downRightPressed = false;
 var downLeftPressed = false;
-////YOff
-// var downUpPressed = false;
-// var downDownPressed = false;
-////YOff
+//YOff
+var downUpPressed = false;
+var downDownPressed = false;
+//YOff
 
 //PaddleUP##############
 var upPaddleHeight = 10;
@@ -23,10 +23,10 @@ var upPaddleWidth = 100;
 var upPaddleX = (canvas.width-upPaddleWidth)/2;
 var upRightPressed = false;
 var upLeftPressed = false;
-////YOff
-// var upUpPressed = false;
-// var upDownPressed = false;
-////YOff
+//YOff
+var upUpPressed = false;
+var upDownPressed = false;
+//YOff
 
 var paddleColor = "#4b7502";
 var ballColor = "#13084a";
@@ -35,14 +35,12 @@ var scoreAndHalfColor = "#614355";
 //score
 var adScore = 0;
 var lrScore = 0;
-/*
 //YOff
 //y axis paddle offset
 var upPaddleYOffset = 0;
 var downPaddleYOffset = 0;
 var maxYOffset = 70;
 //YOff
-*/
 
 
 //Event
@@ -70,7 +68,6 @@ function keyDownHandler(e) {
             upLeftPressed = true;
             break;
         //YOff
-        /*
         case "Up":
             downUpPressed = true;
             break;
@@ -89,7 +86,6 @@ function keyDownHandler(e) {
         case "s":
             upDownPressed = true;
             break;
-        */
         //YOff
         default:
             break;
@@ -116,8 +112,7 @@ function keyUpHandler(e) {
         case "a":
             upLeftPressed = false;
             break;
-            //YOff
-        /* 
+        //YOff
         case "Up":
             downUpPressed = false;
             break;
@@ -136,8 +131,6 @@ function keyUpHandler(e) {
         case "s":
             upDownPressed = false;
             break;
-        
-        */
         //YOff
         default:
             break;
@@ -230,7 +223,7 @@ function drawMultiplayer() {
         downPaddleX -= 7;
     }
 
-    /*
+    //yOffset
     if(upDownPressed && upPaddleYOffset < maxYOffset + 7){
         upPaddleYOffset += 7;
     }
@@ -245,7 +238,6 @@ function drawMultiplayer() {
     else if(downUpPressed && downPaddleYOffset < maxYOffset + 7){
         downPaddleYOffset += 7;
     }
-    */
     
     x += dx;
     y += dy;
