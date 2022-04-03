@@ -211,7 +211,7 @@ function drawMultiplayer() {
         }
         else {
             lrScore++;
-            x = canvas.width/2
+            x = canvas.width/2;
             y = canvas.height/2;
             paused = true;
         }
@@ -222,7 +222,7 @@ function drawMultiplayer() {
         }
         else {
             adScore++;
-            x = canvas.width/2
+            x = canvas.width/2;
             y = canvas.height/2;
             paused = true;
         }
@@ -257,11 +257,6 @@ function drawMultiplayer() {
             lastUp = false;
         }
     }
-
-
-
-
-
     if(upDownPressed && upPaddleYOffset < maxYOffset + 7){
         upPaddleYOffset += 5;
     }
