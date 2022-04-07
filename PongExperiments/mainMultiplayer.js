@@ -178,30 +178,20 @@ function drawScore(){
 
 //Logic section
 
-// function incrementScoreAD(){
-//     //increment score and reset ball position and pause the game
-//     adScore++;
-//     x = canvas.width/2;
-//     y = canvas.height/2;
-//     paused = true;
-// }
 
-// function incrementScoreLR(){
-//     //increment score and reset ball position and pause the game
-//     lrScore++;
-//     x = canvas.width/2;
-//     y = canvas.height/2;
-//     paused = true;
-// }
 function incrementScore(whichPaddle){
     x = canvas.width/2;
     y = canvas.height/2;
     paused = true;
-    if(whichPaddle = 1){
-        adScore++;
-    }
-    else if (whichPaddle = 0){
-        lrScore++;
+    switch (whichPaddle) {
+        case 0:
+            adScore++;
+            break;
+        case 1:
+            lrScore++;
+            break;
+        default:
+            break;
     }
 }
 
@@ -240,27 +230,16 @@ function ballMovementAndCollision(){
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
     }
-    
-    if(y + dy < ballRadius+upPaddleHeight) {
-        if(x > upPaddleX && x < upPaddleX + upPaddleWidth) { // paddle offset lll
-            dy = -dy;
-            
-        }
-        else {
-            incrementScore(0);
-        }
+    //killines
+    if(y + dy < ballRadius/2+upPaddleHeight) {
+        incrementScore(1);
     }
-    if(y + dy > canvas.height-ballRadius-downPaddleHeight) {/// && y + dy < canvas.height-ballRadius-downPaddleHeight
-        if(x > downPaddleX && x < downPaddleX + downPaddleWidth) {
-            dy = -dy;
-        }
-        else {
-            incrementScore(1);
-        }
+    if(y + dy > canvas.height-ballRadius/2-downPaddleHeight) {
+        incrementScore(0);
     }
 
     if(y + dy < upPaddleYOffset + ballRadius*2 && y + dy > upPaddleYOffset - ballRadius*2 && x + dx > upPaddleX && x + dx < upPaddleX + upPaddleWidth) {
-        if(!(y+dy > y)){//!(y+dy > y)
+        if(!(y+dy > y)){
             dy = -dy;
             lastUp = true;
             lastDown = false;
@@ -291,7 +270,6 @@ function drawMultiplayer() {
     movementPaddleXDir();
     movementPaddleYDir();
     ballMovementAndCollision();
-    //killines
     
     x += dx;
     y += dy;

@@ -59,44 +59,48 @@ function movementPaddleXDir(){
     }
 }
 function ballMovementAndCollision(){
-    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
-        dx = -dx;
-    }
-    
-    if(y + dy < ballRadius+upPaddleHeight) {
-        if(x > upPaddleX && x < upPaddleX + upPaddleWidth) { // paddle offset lll
-            dy = -dy;
-            
+    try {
+        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+            dx = -dx;
         }
-        else {
-            incrementScore(0);
+        
+        if(y + dy < ballRadius+upPaddleHeight) {
+            if(x > upPaddleX && x < upPaddleX + upPaddleWidth) {
+                dy = -dy;
+                
+            }
+            else {
+                incrementScore(0);
+            }
         }
-    }
-    if(y + dy > canvas.height-ballRadius-downPaddleHeight) {/// && y + dy < canvas.height-ballRadius-downPaddleHeight
-        if(x > downPaddleX && x < downPaddleX + downPaddleWidth) {
-            dy = -dy;
-        }
-        else {
-            incrementScore(1);
-        }
-    }
-
-    if(y + dy < upPaddleYOffset + ballRadius*2 && y + dy > upPaddleYOffset - ballRadius*2 && x + dx > upPaddleX && x + dx < upPaddleX + upPaddleWidth) {
-        if(!(y+dy > y)){//!(y+dy > y)
-            dy = -dy;
-            lastUp = true;
-            lastDown = false;
+        if(y + dy > canvas.height-ballRadius-downPaddleHeight) {
+            if(x > downPaddleX && x < downPaddleX + downPaddleWidth) {
+                dy = -dy;
+            }
+            else {
+                incrementScore(1);
+            }
         }
     
-    }
-    if(y + dy < canvas.height - downPaddleYOffset + ballRadius*2 && y + dy > canvas.height - downPaddleYOffset - ballRadius*2 && x + dx > downPaddleX && x + dx < downPaddleX + downPaddleWidth) {
-        if(!(y+dy < y)){
-            dy = -dy;
-            lastDown = true;
-            lastUp = false;
+        if(y + dy < upPaddleYOffset + ballRadius*2 && y + dy > upPaddleYOffset - ballRadius*2 && x + dx > upPaddleX && x + dx < upPaddleX + upPaddleWidth) {
+            if(!(y+dy > y)){//!(y+dy > y)
+                dy = -dy;
+                lastUp = true;
+                lastDown = false;
+            }
+        
         }
+        if(y + dy < canvas.height - downPaddleYOffset + ballRadius*2 && y + dy > canvas.height - downPaddleYOffset - ballRadius*2 && x + dx > downPaddleX && x + dx < downPaddleX + downPaddleWidth) {
+            if(!(y+dy < y)){
+                dy = -dy;
+                lastDown = true;
+                lastUp = false;
+            }
+        }
+        
+    } catch (error) {
+        console.error(error);
     }
-
 }
 
 
