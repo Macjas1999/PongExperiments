@@ -32,3 +32,6 @@ function pause(){
         }
     }
 }
+function settings(){
+    inState1 = document.getElementById("menubar0").innerHTML;
+}
