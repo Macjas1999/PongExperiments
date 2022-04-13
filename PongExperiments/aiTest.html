@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Testgame</title>
     <link rel="stylesheet" href="style1.css">
-    <script src="gameMenu.js"></script>
+    <script src="aiTest.js"></script>
     
 </head>
 <body>
@@ -25,6 +25,20 @@
         </div>
     </header>
 
+    <div class="menubarAI">
+        <input id = "input1" class="boxAI" type="number">
+        <p id = "resutl"></p>
+        <input id = "input2" class="boxAI" type="number">
+    </div>
+    <script>
+        learning(50);
+        useP(document.getElementById("input1").innerHTML, document.getElementById("input2").innerHTML); 
+        document.getElementById("result").innerHTML = ouputP;
+        var interval = setInterval(useP, 50);
+    </script>
+
+    
+    <!--
     <canvas id="myCanvas" width="800" height="600"></canvas>
     <div class="separator"></div>
     <div class = "controlPanelBottom">
@@ -36,8 +50,10 @@
         
         <button type="button" id = "menubar3" class="menuButton" onclick="pause()">PAUSE</button>
     </div>
-    <p id="loading">0</p>
+    <p id="loading">0</p> 
     <script src="mainSingle.js"></script>
-    <script src="mainMultiplayer.js"></script>
+    <script src="mainMultiplayer.js"></script>-->
+
+
 </body>
 </html>
