@@ -1,0 +1,114 @@
+:root{
+    --lBcg: linear-gradient(180deg, rgba(204,204,255,1) 25%, rgba(210,250,255,1) 75%);
+    --dBcg: linear-gradient(180deg, rgba(170, 170, 255, 1) 40%, rgba(204, 204, 255, 1) 70%);
+}
+
+* { padding: 0; margin: 0; }
+
+
+.h_txt {
+    color: rgb(13, 22, 104);
+    text-align: center;
+    font-size: 2.45em;
+    padding-top: 5px;
+}
+
+header{
+    background: var(--dBcg);
+    
+}
+body{
+    background: var(--lBcg) fixed;
+}
+.menubar{
+    /* background-color: var(--dBcq); */
+    font-size: 1.15em;
+    text-decoration: none;
+    font-family: inherit;
+    text-align: center;
+    padding-top: 0;
+    margin-top: 2%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    border-style: none;
+    }
+.box{
+    /* background-color: var(--dBcq); */
+    color: #002ba1;
+    font-size: 1.15em;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* margin-top: 0;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 0; */
+    border-style: none;
+    transition-duration: 0.4s;
+}
+.box:hover {
+    color: rgba(56, 143, 42, 0.527);
+    font-size: 1.45em;
+}
+
+.sidebar{
+    padding-top: 40px;
+    float: left;
+    width: 15%;
+    height: 50%;
+}
+.boxSide{
+    display: block;
+    position: relative;
+    transition-duration: 0.3s;
+    background-color: rgba(170, 170, 255, 0.508);
+    border-radius: 4px;
+    color: #002ba1;
+    font-size: 1.05em;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boxSide:hover {
+    color: rgba(56, 143, 42, 0.527);
+    background-color: rgb(179, 197, 180);
+    font-size: 1.35em;
+    border-radius: 20px;
+}
+.CV{  
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+}
+.container{
+    display: block;
+    float: right;
+    width: 80%;
+    height: 80%;
+
+}
+p{
+    color: #001b67;
+    font-size: 1em;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+    font-weight: bold;
+    text-align: justify;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    padding-right: 10%;
+}

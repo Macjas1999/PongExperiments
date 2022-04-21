@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Testgame</title>
+    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="canvasStyle.css">
+    <script src="gameMenu.js"></script>
+    
+</head>
+<body>
+
+    <header>	
+        <h1 class = "h_txt">Pong Experiments</h1>
+        
+        <div class = "menubar">
+            <a class = "box" href = "index.html"> Home </a>
+    
+            <a class = "box" href = "mainPage.html"> || </a>
+    
+            <a class = "box" href = "indexCV.html"> || </a>
+    
+            <a class = "box" href = "test_side.html"> Nowy </a>
+    
+            <a class = "box" href = "https://www.google.com"> Nowy </a>
+        </div>
+    </header>
+
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+    <div class="separator"></div>
+    <div class = "controlPanelBottom">
+        <button type="button" id = "menubar0" class="menuButton" onclick="startSingle()">SINGLE</button>
+
+        <button type="button" id = "menubar1" class="menuButton" onclick="startMulti()">MULTI</button>
+
+        <button type="button" id = "menubar2" class="menuButton" onclick="window.location.reload()">REFRESH</button>
+        
+        <button type="button" id = "menubar3" class="menuButton" onclick="pause()">PAUSE</button>
+    </div>
+    <script src="mainSingle.js"></script>
+    <script src="mainMultiplayer.js"></script>
+</body>
+</html>

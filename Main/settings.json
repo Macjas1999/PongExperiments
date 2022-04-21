@@ -1,0 +1,12 @@
+{
+    "ballRadius": 10,
+    "dx": 2,
+    "dy": -4,
+    "PaddleHeight": 10,
+    "PaddleWidth": 100,
+    "paddleColor": "#4b7502",
+    "ballColor": "#13084a",
+    "scoreAndHalfColor": "#614355",
+    "dPaddleYOffset": 5,
+    "dPaddleX": 7
+}
