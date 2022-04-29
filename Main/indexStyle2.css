@@ -66,30 +66,56 @@ body{
 .boxSide{
     display: block;
     position: relative;
+    border: none;
     width: 120px;
     transition-duration: 0.3s;
     background-color: rgba(129, 145, 250, 0.2);
-    border-radius: 4px;
     color: #002ba1;
     font-size: 1.05em;
     text-decoration: none;
     font-family: "Lucida Console", monospace;
     font-weight: bold;
     text-align: center;
-    padding: 0;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.buttonBoxSide{
+    display: inline-block;
+    border: none;
+    position: relative;
+    width: 120px;
+    transition-duration: 0.3s;
+    background-color: rgba(129, 145, 250, 0.2);
+    color: #002ba1;
+    font-size: 1.05em;
+    text-decoration: none;
+    font-family: "Lucida Console", monospace;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+
 .boxSide:hover {
     color: rgba(56, 143, 42, 0.527);
     background-color: rgb(179, 197, 180);
     font-size: 1.35em;
-    border-radius: 20px;
+    width: 140px;
+
+}
+.buttonBoxSide:hover {
+    color: rgba(56, 143, 42, 0.527);
+    background-color: rgb(179, 197, 180);
+    font-size: 1.35em;
+    width: 140px;
+
 }
 .CV{  
     margin: 0 auto;
