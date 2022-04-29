@@ -1,6 +1,6 @@
 :root{
-    --lBcg: linear-gradient(180deg, rgba(204,204,255,1) 25%, rgba(210,250,255,1) 75%);
-    --dBcg: linear-gradient(180deg, rgba(170, 170, 255, 1) 40%, rgba(204, 204, 255, 1) 70%);
+    --lBcg: linear-gradient(180deg, rgba(203, 203, 203, 1) 20%, rgb(136, 139, 145) 80%);
+    --dBcg: linear-gradient(180deg, rgb(161, 167, 175) 60%, rgba(203, 203, 203, 1) 70%);
 }
 
 * { padding: 0; margin: 0; }
@@ -53,12 +53,12 @@ body{
     transition-duration: 0.4s;
 }
 .box:hover {
-    color: rgba(56, 143, 42, 0.527);
-    font-size: 1.45em;
+    color: rgba(92, 143, 45, 0.5);
+    font-size: 1.25em;
 }
 
 .sidebar{
-    padding-top: 40px;
+    padding-top: 2%;
     float: left;
     width: 15%;
     height: 50%;
@@ -68,7 +68,7 @@ body{
     position: relative;
     width: 120px;
     transition-duration: 0.3s;
-    background-color: rgba(170, 170, 255, 0.508);
+    background-color: rgba(129, 145, 250, 0.2);
     border-radius: 4px;
     color: #002ba1;
     font-size: 1.05em;
@@ -110,7 +110,7 @@ p{
     font-family: "Lucida Console", monospace;
     font-weight: bold;
     text-align: justify;
-    padding-top: 8%;
+    padding-top: 4%;
     padding-bottom: 8%;
     padding-right: 10%;
 }

@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>mjSrvr</title>
-    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="indexStyle2.css">
     <link rel="stylesheet" href="canvasStyle.css">    
+    <link rel="stylesheet" href="authStyle.css">    
 </head>
 <body>
     <header>	
@@ -18,7 +19,8 @@
         </div>
     </header>
     <div class = "sidebar">
-        <a class = "boxSide" href = "index.html"> |T1| </a>
+        <button class = "boxSide" onclick="document.getElementById('authF').style.display='block'">Login</button>
+        <a class = "boxSide" href = "authorization.html"> |T1| </a>
         <a class = "boxSide" href = "mainPage.html"> |T2| </a>
         <a class = "boxSide" href = "aiTest.html"> |T3| </a>
         <a class = "boxSide" href = "test_side.html"> |T4| </a>
@@ -31,5 +33,31 @@
         towards broadly understood IT.<br>
         Programming and learning about new technologies is currently a hobby for me, which I would also like to make a source of income.<br>Currently, I work on the hotline and e-mail service of the OBI DIY store, but I would like to develop in the direction closer to my interests. I am looking for a suitable place in the industry and I do not have a strict specialization, so I am ready to learn any system, language, framework or work paradigm.</p>
     </div>
+
+    <div id="authF" class="modal">
+        <span onclick="document.getElementById('authF').style.display='none'" class="close" title="Close Modal">&times;</span>
+     
+       <!-- Modal Content -->
+       <form class="modalContent animate" action="/action_page.php">
+     
+         <div class="containerAuth">
+           <label for="uname"><b>Username</b></label>
+           <input type="text" placeholder="Enter Username" name="uname" required>
+     
+           <label for="psw"><b>Password</b></label>
+           <input type="password" placeholder="Enter Password" name="psw" required>
+     
+           <button type="submit" id = "authButtons">Login</button>
+           <label>
+             <input type="checkbox" checked="checked" name="remember"> Remember me
+           </label>
+         </div>
+     
+         <div class="container" style="background-color:#f1f1f1">
+           <button id = "authButtons" type="button" onclick="document.getElementById('authF').style.display='none'" class="cancelbtn">Cancel</button>
+           <span class="psw">Forgot <a href="#">password?</a></span>
+         </div>
+       </form>
+     </div>  
 </body>
 </html>

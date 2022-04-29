@@ -20,6 +20,7 @@ function pause(){
     if(!paused){
         paused = true;
         document.getElementById("menubar3").innerHTML = "UNPAUSE";
+        // document.getElementById("menubar3").style.backgroundColor = "rgb(60,60,60)";
     }
     else if(paused){
         paused = false;
