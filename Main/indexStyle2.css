@@ -58,7 +58,7 @@ body{
 }
 
 .sidebar{
-    padding-top: 2%;
+    /* padding-top: 1%; */
     float: left;
     width: 15%;
     height: 50%;

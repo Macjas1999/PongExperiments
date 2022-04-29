@@ -30,6 +30,7 @@ input[type=text], input[type=password] {
 
   
   .containerAuth {
+    background-color: rgb(151, 181, 219);
     padding: 16px;
   }
   
@@ -37,7 +38,7 @@ input[type=text], input[type=password] {
     float: right;
     padding-top: 16px;
   }
-  
+
  .modal {
     /*main login box
     default not visible fixed on top*/
@@ -57,7 +58,8 @@ input[type=text], input[type=password] {
     background-color: rgb(151, 181, 219);
     margin: 5px auto;
     border: 1px solid rgb(113, 160, 221);
-    width: 80%;
+    align: center;
+    width: 50%;
   }
   
   /* The Close Button */
