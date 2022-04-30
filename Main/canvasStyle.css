@@ -5,6 +5,15 @@ canvas {
     margin-top: 20px;
     padding-top: 10px;
 }
+#myCanvas{
+    border: #002ba1;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
 .separator{
     background: rgb(67, 46, 124);
     display: block;
