@@ -32,6 +32,7 @@ input[type=text], input[type=password] {
   .containerAuth {
     background-color: rgb(151, 181, 219);
     padding: 16px;
+    text-align: center;
   }
   
   span.psw {
@@ -50,7 +51,7 @@ input[type=text], input[type=password] {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color:rgba(255, 60, 60, 0.709);
+    background-color:rgba(186, 0, 0, 0.509);
     padding-top: 60px;
   }
   
@@ -58,7 +59,7 @@ input[type=text], input[type=password] {
     background-color: rgb(151, 181, 219);
     margin: 5px auto;
     border: 1px solid rgb(113, 160, 221);
-    text-align: center;
+    /* text-align: center; */
     width: 50%;
   }
   
